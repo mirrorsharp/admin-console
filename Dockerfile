@@ -1,9 +1,5 @@
-FROM ubuntu:18.04
+FROM centos:centos7
 
-RUN apt-get update && \
-    apt-get install -y redis-server && \
-    apt-get clean
+RUN yum update -y
 
-EXPOSE 6379
-
-CMD ["redis-server", "--protected-mode no"]
+CMD ["echo", "-c", "test"]
